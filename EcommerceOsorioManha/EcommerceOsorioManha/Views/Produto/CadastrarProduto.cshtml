@@ -13,17 +13,24 @@
 <body>
     <h1>Cadastrar Produto</h1>
     <div> 
-        @Html.Label("Nome do produto")
-        @Html.TextBox("txtNome")<br>
+       @using (Html.BeginForm())
+       { 
 
-        @Html.Label("Preço do produto:")
-        @Html.TextBox("txtPreco")<br>
+            @Html.Label("Nome do produto:")
+            @Html.TextBox("txtNome")<br>
 
-        @Html.Label("Categoria do produto:")
-        @Html.TextBox("txtCategoria")<br>
+            @Html.Label("Preço do produto:")
+            @Html.TextBox("txtPreco")<br>
 
-        @Html.Label("Descrição do produto:")
-        @Html.TextBox("txtDescricao")<br>
+            @Html.Label("Categoria do produto:")
+            @Html.TextBox("txtCategoria")<br>
+
+            @Html.Label("Descrição do produto:")
+            @Html.TextBox("txtDescricao")<br>
+
+            <input type="submit" value="Cadastar" />
+       }
+
     </div>
 </body>
 </html>
