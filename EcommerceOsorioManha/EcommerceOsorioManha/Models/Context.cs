@@ -1,15 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Web;
+﻿using System.Data.Entity;
 
 namespace EcommerceOsorioManha.Models
 {
     public class Context : DbContext
     {
         //Mapear classes que vao virar tabela no banco
+        public Context() : base("DbEcommerce")
+        {
+        }
 
-        public int DbSet<Produto> Produtos { Get; Set; }
+        public DbSet<Produto> Produtos { get; set; }
     }
 }

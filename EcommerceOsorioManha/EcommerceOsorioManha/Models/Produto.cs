@@ -11,7 +11,7 @@ namespace EcommerceOsorioManha.Models
     public class Produto
     {
         [Key]
-        public int ProdutoId;
+        public int ProdutoId { get; set; }
         public string Nome { get; set; }
         public double Preco { get; set; }
         public string Descricao { get; set; }
