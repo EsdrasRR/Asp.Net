@@ -13,5 +13,9 @@ namespace EcommerceOsorioManha.Controllers
         {
             return View();
         }
+        public ActionResult CadastrarProduto()
+        {
+            return View();
+        }
     }
 }
