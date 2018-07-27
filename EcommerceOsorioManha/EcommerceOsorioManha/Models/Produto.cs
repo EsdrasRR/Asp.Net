@@ -1,16 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
 namespace EcommerceOsorioManha.Models
 {
+    [Table("Produtos")]
     public class Produto
     {
-        private String nome { get; set; }
-        private String preco { get; set; }
-        private String descricao { get; set; }
-        private String categoria { get; set; }
-   
+        [Key]
+        public int ProdutoId;
+        public string Nome { get; set; }
+        public double Preco { get; set; }
+        public string Descricao { get; set; }
+        public string Categoria { get; set; }
+        public string Imagem { get; set; }
     }
 }

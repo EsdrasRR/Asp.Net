@@ -44,3 +44,7 @@ C:\Users\Aluno\Source\Repos\Asp.Net\EcommerceOsorioManha\EcommerceOsorioManha\bi
 C:\Users\Aluno\Source\Repos\Asp.Net\EcommerceOsorioManha\EcommerceOsorioManha\obj\Debug\EcommerceOsorioManha.csprojResolveAssemblyReference.cache
 C:\Users\Aluno\Source\Repos\Asp.Net\EcommerceOsorioManha\EcommerceOsorioManha\obj\Debug\EcommerceOsorioManha.dll
 C:\Users\Aluno\Source\Repos\Asp.Net\EcommerceOsorioManha\EcommerceOsorioManha\obj\Debug\EcommerceOsorioManha.pdb
+C:\Users\Aluno\Source\Repos\Asp.Net\EcommerceOsorioManha\EcommerceOsorioManha\bin\EntityFramework.dll
+C:\Users\Aluno\Source\Repos\Asp.Net\EcommerceOsorioManha\EcommerceOsorioManha\bin\EntityFramework.SqlServer.dll
+C:\Users\Aluno\Source\Repos\Asp.Net\EcommerceOsorioManha\EcommerceOsorioManha\bin\EntityFramework.xml
+C:\Users\Aluno\Source\Repos\Asp.Net\EcommerceOsorioManha\EcommerceOsorioManha\bin\EntityFramework.SqlServer.xml
