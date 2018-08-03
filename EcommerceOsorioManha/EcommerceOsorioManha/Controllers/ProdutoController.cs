@@ -29,22 +29,22 @@ namespace EcommerceOsorioManha.Controllers
 
             return RedirectToAction("Index", "Produto");
         }
-        public ActionResult RemoverProduto( int id)
+        public ActionResult RemoverProduto(int id)
         {
             ProdutoDAO.RemoverProduto(id);
-            return RedirectToAction("Index", "Produto"); 
+            return RedirectToAction("Index", "Produto");
         }
-        public ActionResult AlterarProduto ( int id)
+        public ActionResult AlterarProduto(int id)
         {
             ViewBag.Produto = ProdutoDAO.BuscarProdutoPorId(id);
             return View();
         }
         [HttpPost]
-        public ActionResult AlterarProduto (string txtNome, string txtDescricao, string txtPreco, string txtCategoria, int txtId)
+        public ActionResult AlterarProduto(string txtNome, string txtDescricao, string txtPreco, string txtCategoria, int txtId)
         {
 
-            AlterarProduto(txtNome, txtDescricao, txtPreco, txtCategoria, txtId);
-            
+            ProdutoDAO.AlterarProduto(txtNome, txtDescricao, txtPreco, txtCategoria, txtId);
+
             return RedirectToAction("Index", "Produto");
         }
     }
