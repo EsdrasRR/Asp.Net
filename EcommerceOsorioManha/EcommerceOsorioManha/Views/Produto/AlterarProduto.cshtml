@@ -1,41 +1,45 @@
 ﻿@using EcommerceOsorioManha.Models;
 
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/Layout.cshtml";
     Produto produto = ViewBag.Produto;
 
 }
 
-<!DOCTYPE html>
+<div>
+    @using (Html.BeginForm())
+    {
+        <fieldset>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>AlterarProduto</title>
-</head>
-<body>
-    <h1>Alterar Produto</h1>
-    <div>
-        @using (Html.BeginForm())
-        {
-            @Html.Hidden("txtId", produto.ProdutoId)
-            @Html.TextBox("txtId2", produto.ProdutoId, new { @disabled= ""})<br/>
+            <legend>Alterar Produto</legend>
 
-            @Html.Label("Nome do produto:")
-            @Html.TextBox("txtNome", produto.Nome)<br>
+            <div class="form-group">
+                @Html.Hidden("txtId", produto.ProdutoId, new { @class = "control-label col-sm-2" })
+            </div>
 
-            @Html.Label("Preço do produto:")
-            @Html.TextBox("txtPreco", produto.Preco)<br>
+            <div class="form-group">
+                @Html.Label("Nome do produto:", new { @class = "control-label col-sm-2" })
+                @Html.TextBox("txtNome", produto.Nome)
+            </div>
 
-            @Html.Label("Categoria do produto:")
-            @Html.TextBox("txtCategoria", produto.Categoria)<br>
+            <div class="form-group">
+                @Html.Label("Preço do produto:", new { @class = "control-label col-sm-2" })
+                @Html.TextBox("txtPreco", produto.Preco)
+            </div>
 
-            @Html.Label("Descrição do produto:")
-            @Html.TextBox("txtDescricao", produto.Descricao)<br>
+            <div class="form-group">
+                @Html.Label("Categoria do produto:", new { @class = "control-label col-sm-2" })
+                @Html.TextBox("txtCategoria", produto.Categoria)
+            </div>
 
-            <input type="submit" value="Alterar" />
-        }
+            <div class="form-group">
+                @Html.Label("Descrição do produto:", new { @class = "control-label col-sm-2" })
+                @Html.TextBox("txtDescricao", produto.Descricao)
+            </div>
 
-    </div>
-</body>
-</html>
+            <input type="submit" class="btn btn-secondary" value="Alterar" />
+        </fieldset>
+    }
+
+</div>
+
