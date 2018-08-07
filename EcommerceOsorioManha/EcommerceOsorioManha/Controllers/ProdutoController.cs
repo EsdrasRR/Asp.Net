@@ -22,9 +22,22 @@ namespace EcommerceOsorioManha.Controllers
         public ActionResult CadastrarProduto(Produto produto)
         {
 
-            ProdutoDAO.CadastrarProduto(produto);
-
-            return RedirectToAction("Index", "Produto");
+            if (ModelState.IsValid)
+            {
+                if (ProdutoDAO.CadastrarProduto(produto))
+                {
+                    return RedirectToAction("Index", "Produto");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Não é possível adicionar um produto com o mesmo nome!");
+                    return View(produto);
+                }
+            }
+            else
+            {
+                return View(produto);
+            }
         }
         public ActionResult RemoverProduto(int id)
         {
@@ -39,9 +52,29 @@ namespace EcommerceOsorioManha.Controllers
         public ActionResult AlterarProduto(Produto produtoAlterado)
         {
 
-            ProdutoDAO.AlterarProduto(produtoAlterado);
+            Produto produtoOriginal = ProdutoDAO.BuscarProdutoPorId(produtoAlterado.ProdutoId);
 
-            return RedirectToAction("Index", "Produto");
+            produtoOriginal.Nome = produtoAlterado.Nome;
+            produtoOriginal.Descricao = produtoAlterado.Descricao;
+            produtoOriginal.Preco = produtoAlterado.Preco;
+            produtoOriginal.Categoria = produtoAlterado.Categoria;
+
+            if (ModelState.IsValid)
+            {
+                if (ProdutoDAO.AlterarProduto(produtoOriginal))
+                {
+                    return RedirectToAction("Index", "Produto");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Não é possível alterar um produto com o mesmo nome!");
+                    return View(produtoOriginal);
+                }
+            }
+            else
+            {
+                return View(produtoOriginal);
+            }
         }
     }
 }

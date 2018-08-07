@@ -17,10 +17,19 @@ namespace EcommerceOsorioManha.DAL
             return ctx.Produtos.ToList();
         }
 
-        public static void CadastrarProduto(Produto produto)
+        public static bool CadastrarProduto(Produto produto)
         {
-            ctx.Produtos.Add(produto);
-            ctx.SaveChanges();
+            if (BuscarProdutoPorNome(produto) == null)
+            {
+                ctx.Produtos.Add(produto);
+                ctx.SaveChanges();
+                return true;
+            }
+            return false;
+        }
+        public static Produto BuscarProdutoPorNome(Produto produto)
+        {
+            return ctx.Produtos.FirstOrDefault(x => x.Nome.Equals(produto.Nome));
         }
 
         public static void RemoverProduto(int id)
@@ -34,17 +43,17 @@ namespace EcommerceOsorioManha.DAL
            ctx.Produtos.Find(id);
         }
 
-        public static void AlterarProduto(Produto produtoAlterado)
+        public static bool AlterarProduto(Produto produto)
         {
-            Produto produtoOriginal = ProdutoDAO.BuscarProdutoPorId(produtoAlterado.ProdutoId);
-
-            produtoOriginal.Nome = produtoAlterado.Nome;
-            produtoOriginal.Descricao = produtoAlterado.Descricao;
-            produtoOriginal.Preco = produtoAlterado.Preco;
-            produtoOriginal.Categoria = produtoAlterado.Categoria;
-
-            ctx.Entry(produtoAlterado).State = EntityState.Modified;
-            ctx.SaveChanges();
+            if (ctx.Produtos.FirstOrDefault
+                (x => x.Nome.Equals(produto.Nome) &&
+                x.ProdutoId != produto.ProdutoId) == null)
+            {
+                ctx.Entry(produto).State = EntityState.Modified;
+                ctx.SaveChanges();
+                return true;
+            }
+            return false;
         }
 
         public static Produto BuscarProdutoPorId(int id)
