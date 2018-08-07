@@ -1,34 +1,36 @@
-﻿
-@{
-    Layout = "~/Views/Shared/Layout.cshtml";
-}
-
-
+﻿@model EcommerceOsorioManha.Models.Produto
 @using (Html.BeginForm())
 {
     <fieldset>
 
         <legend>Cadastrar Produto</legend>
 
-        <div class="form-group">
-            @Html.Label("Nome do produto:", new { @class = "control-label col-sm-2" })
-            @Html.TextBox("txtNome", null, new { @class = "form-control", @placeholder = "Nome do Produto"})
+        <div class="col-sm-10">
+            @Html.Label("Nome do produto")
+            <div class="form-group">
+                @Html.TextBoxFor(model => model.Nome, new { @class = "form-control", @placeholder = "Nome do Produto" })
+            </div>
+        </div>
+
+        <div class="col-sm-10">
+            @Html.Label("Preço do produto")
+            <div class="form-group">
+                @Html.TextBoxFor(model => model.Preco, new { @class = "form-control", @placeholder = "Preço do Produto" })
+            </div>
+        </div>
+
+        <div class="col-sm-10">
+            @Html.Label("Descrição do produto")
+            <div class="form-group">
+                @Html.TextBoxFor(model => model.Categoria, new { @class = "form-control", @placeholder = "Categoria do Produto" })
+            </div>
         </div>
 
         <div class="form-group">
-            @Html.Label("Preço do produto:", new { @class = "control-label col-sm-2" })
-            @Html.TextBox("txtPreco", null, new { @class = "form-control", @placeholder = "Preço do Produto" })
-        </div>
-
-
-        <div class="form-group">
-            @Html.Label("Categoria do produto:", new { @class = "control-label col-sm-2" })
-            @Html.TextBox("txtCategoria", null, new { @class = "form-control", @placeholder = "Categoria do Produto" })
-        </div>
-
-        <div class="form-group">
-            @Html.Label("Descrição do produto:", new { @class = "control-label col-sm-2" })
-            @Html.TextBox("txtDescricao", null, new { @class = "form-control", @placeholder = "Descrição do Produto" })
+            @Html.Label("Preço do produto")
+            <div>
+                @Html.TextBoxFor(model => model.Descricao, new { @class = "form-control", @placeholder = "Descrição do Produto" })
+            </div>
         </div>
 
         <input type="submit" class="btn btn-primary" value="Cadastar" />

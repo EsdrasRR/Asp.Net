@@ -1,47 +1,48 @@
-﻿
+﻿@using EcommerceOsorioManha.Models
+@model List<Produto>
+
+
 @{
-    Layout = "~/Views/Shared/Layout.cshtml";
     DateTime data = ViewBag.Data;
-    List<EcommerceOsorioManha.Models.Produto> produtos = ViewBag.Produtos;
 }
 
-    <div >
+<div>
 
-        <h1>Gerenciamento de Produtos</h1>
-        @*<a href="~/Views/Produto/Cadastrar">Cadastrar Produto</a>*@
+    <h1>Gerenciamento de Produtos</h1>
+    @*<a href="~/Views/Produto/Cadastrar">Cadastrar Produto</a>*@
 
-        @* Link em MVC | Razor *@
-        @Html.ActionLink("Cadastrar Produto", "CadastrarProduto", "Produto")
+    @* Link em MVC | Razor *@
+    @Html.ActionLink("Cadastrar Produto", "CadastrarProduto", "Produto")
 
 
-        <table class="table table-hover table-striped" style="margin-top:30px">
-            <tr>
-                <th>Nome</th>
-                <th>Preço</th>
-                <th>Categoria</th>
-                <th>Descrição</th>
-                <th></th>
-                <th></th>
-            </tr>
-            @foreach (EcommerceOsorioManha.Models.Produto produtoCadastrado in produtos)
+    <table class="table table-hover table-striped" style="margin-top:30px">
+        <tr>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Categoria</th>
+            <th>Descrição</th>
+            <th></th>
+            <th></th>
+        </tr>
+        @foreach (Produto produtoCadastrado in Model)
             {
-                <tr>
-                    <td>@produtoCadastrado.Nome</td>
-                    <td>@produtoCadastrado.Preco</td>
-                    <td>@produtoCadastrado.Categoria</td>
-                    <td>@produtoCadastrado.Descricao</td>
-                    <td>
-                        @Html.ActionLink("Remover", "RemoverProduto", "Produto",
+            <tr>
+                <td>@produtoCadastrado.Nome</td>
+                <td>@produtoCadastrado.Preco</td>
+                <td>@produtoCadastrado.Categoria</td>
+                <td>@produtoCadastrado.Descricao</td>
+                <td>
+                    @Html.ActionLink("Remover", "RemoverProduto", "Produto",
                        new { id = produtoCadastrado.ProdutoId }, null)
-                    </td>
-                    <td>@Html.ActionLink("Alterar", "AlterarProduto", "Produto", new { id = produtoCadastrado.ProdutoId }, null)</td>
-                </tr>
+                </td>
+                <td>@Html.ActionLink("Alterar", "AlterarProduto", "Produto", new { id = produtoCadastrado.ProdutoId }, null)</td>
+            </tr>
 
 
-            }
-        </table>
+        }
+    </table>
 
-        <p>Dados atualizados às: <b>@data</b></p>
-    </div>
+    <p>Dados atualizados às: <b>@data</b></p>
+</div>
 
-    <hr style="margin-top:30px" />
+<hr style="margin-top:30px" />

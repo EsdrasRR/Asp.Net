@@ -17,20 +17,10 @@ namespace EcommerceOsorioManha.DAL
             return ctx.Produtos.ToList();
         }
 
-        public static void CadastrarProduto(string txtNome, string txtDescricao, string txtPreco, string txtCategoria)
+        public static void CadastrarProduto(Produto produto)
         {
-
-            Produto produto = new Produto
-            {
-                Nome = txtNome,
-                Descricao = txtDescricao,
-                Preco = Convert.ToDouble(txtPreco),
-                Categoria = txtCategoria,
-            };
-
             ctx.Produtos.Add(produto);
             ctx.SaveChanges();
-
         }
 
         public static void RemoverProduto(int id)
@@ -44,15 +34,16 @@ namespace EcommerceOsorioManha.DAL
            ctx.Produtos.Find(id);
         }
 
-        public static void AlterarProduto(string txtNome, string txtDescricao, string txtPreco, string txtCategoria, int txtId)
+        public static void AlterarProduto(Produto produtoAlterado)
         {
-            Produto produto = BuscarProdutoPorId(txtId);
-            produto.Nome = txtNome;
-            produto.Descricao = txtDescricao;
-            produto.Preco = Convert.ToDouble(txtPreco);
-            produto.Categoria = txtCategoria;
+            Produto produtoOriginal = ProdutoDAO.BuscarProdutoPorId(produtoAlterado.ProdutoId);
 
-            ctx.Entry(produto).State = EntityState.Modified;
+            produtoOriginal.Nome = produtoAlterado.Nome;
+            produtoOriginal.Descricao = produtoAlterado.Descricao;
+            produtoOriginal.Preco = produtoAlterado.Preco;
+            produtoOriginal.Categoria = produtoAlterado.Categoria;
+
+            ctx.Entry(produtoAlterado).State = EntityState.Modified;
             ctx.SaveChanges();
         }
 
