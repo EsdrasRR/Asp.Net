@@ -27,7 +27,7 @@ namespace EcommerceOsorioManha.Models
         public string Descricao { get; set; }
 
         [Display(Name = "Categoria do produto")]
-        public string Categoria { get; set; }
+        public Categoria Categoria { get; set; }
 
         [Display(Name = "Nome do produto")]
         public string Imagem { get; set; }

@@ -208,3 +208,5 @@ C:\Users\tc823864\Source\Repos\Asp.Net\EcommerceOsorioManha\EcommerceOsorioManha
 C:\Users\tc823864\Source\Repos\Asp.Net\EcommerceOsorioManha\EcommerceOsorioManha\obj\Debug\EcommerceOsorioManha.csproj.GenerateResource.Cache
 C:\Users\tc823864\Source\Repos\Asp.Net\EcommerceOsorioManha\EcommerceOsorioManha\obj\Debug\EcommerceOsorioManha.dll
 C:\Users\tc823864\Source\Repos\Asp.Net\EcommerceOsorioManha\EcommerceOsorioManha\obj\Debug\EcommerceOsorioManha.pdb
+C:\Users\1714384\Source\Repos\Asp.Net\EcommerceOsorioManha\EcommerceOsorioManha\obj\Debug\EcommerceOsorioManha.Migrations.AlterTableProduto.resources
+C:\Users\1714384\Source\Repos\Asp.Net\EcommerceOsorioManha\EcommerceOsorioManha\obj\Debug\EcommerceOsorioManha.Migrations.AddCategoriaTableProduto.resources

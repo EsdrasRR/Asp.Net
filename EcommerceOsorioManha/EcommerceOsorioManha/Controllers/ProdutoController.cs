@@ -1,6 +1,7 @@
 ﻿using EcommerceOsorioManha.DAL;
 using EcommerceOsorioManha.Models;
 using System;
+using System.Web;
 using System.Web.Mvc;
 
 namespace EcommerceOsorioManha.Controllers
@@ -16,22 +17,27 @@ namespace EcommerceOsorioManha.Controllers
         }
         public ActionResult CadastrarProduto()
         {
+            ViewBag.Categorias = new SelectList(CategoriaDAO.RetornarCategorias(), "CategoriaId", "Nome");
             return View();
         }
         [HttpPost]
-        public ActionResult CadastrarProduto(Produto produto)
+        public ActionResult CadastrarProduto(Produto produto, int? Categorias, HttpPostedFileBase fupImagem )
         {
 
             if (ModelState.IsValid)
             {
-                if (ProdutoDAO.CadastrarProduto(produto))
+                if (Categorias != null)
                 {
-                    return RedirectToAction("Index", "Produto");
-                }
-                else
-                {
-                    ModelState.AddModelError("", "Não é possível adicionar um produto com o mesmo nome!");
-                    return View(produto);
+                    produto.Categoria = CategoriaDAO.BuscarCategoriaPorId(Categorias);
+                    if (ProdutoDAO.CadastrarProduto(produto))
+                    {
+                        return RedirectToAction("Index", "Produto");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", "Não é possível adicionar um produto com o mesmo nome!");
+                        return View(produto);
+                    } 
                 }
             }
             else
