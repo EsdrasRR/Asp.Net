@@ -13,10 +13,7 @@ namespace EcommerceOsorioManha.Controllers
         public ActionResult Home(int? id)
         {
             ViewBag.Categorias = CategoriaDAO.RetornarCategorias();
-            if (id == null)
-            {
-                return View(ProdutoDAO.RetornarProdutos());
-            }
+          
             return View(ProdutoDAO.BuscarProdutosPorCategoria(id));
         }
 
