@@ -48,7 +48,6 @@ C:\Users\Aluno\Source\Repos\Asp.Net\EcommerceOsorioManha\EcommerceOsorioManha\bi
 C:\Users\Aluno\Source\Repos\Asp.Net\EcommerceOsorioManha\EcommerceOsorioManha\bin\EntityFramework.SqlServer.dll
 C:\Users\Aluno\Source\Repos\Asp.Net\EcommerceOsorioManha\EcommerceOsorioManha\bin\EntityFramework.xml
 C:\Users\Aluno\Source\Repos\Asp.Net\EcommerceOsorioManha\EcommerceOsorioManha\bin\EntityFramework.SqlServer.xml
-C:\Users\Aluno\Source\Repos\Asp.Net\EcommerceOsorioManha\EcommerceOsorioManha\obj\Debug\EcommerceOsorioManha.Migrations.CriarBanco.resources
 C:\Users\Aluno\Source\Repos\Asp.Net\EcommerceOsorioManha\EcommerceOsorioManha\obj\Debug\EcommerceOsorioManha.csproj.GenerateResource.Cache
 C:\Users\1714384\Source\Repos\Asp.Net\EcommerceOsorioManha\EcommerceOsorioManha\bin\ApplicationInsights.config
 C:\Users\1714384\Source\Repos\Asp.Net\EcommerceOsorioManha\EcommerceOsorioManha\bin\roslyn\csc.exe
@@ -207,3 +206,5 @@ C:\Users\tc823864\Source\Repos\Asp.Net\EcommerceOsorioManha\EcommerceOsorioManha
 C:\Users\tc823864\Source\Repos\Asp.Net\EcommerceOsorioManha\EcommerceOsorioManha\obj\Debug\EcommerceOsorioManha.Migrations.Configurando.resources
 C:\Users\tc823864\Source\Repos\Asp.Net\EcommerceOsorioManha\EcommerceOsorioManha\obj\Debug\EcommerceOsorioManha.csproj.GenerateResource.Cache
 C:\Users\1714384\Source\Repos\Asp.Net\EcommerceOsorioManha\EcommerceOsorioManha\obj\Debug\EcommerceOsorioManha.Migrations.Configurando.resources
+C:\Users\Aluno\Source\Repos\Asp.Net\EcommerceOsorioManha\EcommerceOsorioManha\obj\Debug\EcommerceOsorioManha.Migrations.Configurando.resources
+C:\Users\Aluno\Source\Repos\Asp.Net\EcommerceOsorioManha\EcommerceOsorioManha\obj\Debug\EcommerceOsorioManha.Migrations.Adicionando_Table_ItensVenda.resources
