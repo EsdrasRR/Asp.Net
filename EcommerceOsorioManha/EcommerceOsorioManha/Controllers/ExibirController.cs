@@ -47,7 +47,7 @@ namespace EcommerceOsorioManha.Controllers
 
         public ActionResult CarrinhoCompras()
         {
-            return View(ItemVendaDAO.BuscarItensVendaPorCarrinhoId(Sessao.RetornarCarrinhoId()));
+            return View(ItemVendaDAO.BuscarItensVendaPorCarrinhoId());
         }
     }
 }
