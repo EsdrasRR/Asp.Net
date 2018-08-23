@@ -210,3 +210,4 @@ C:\Users\Aluno\Source\Repos\Asp.Net\EcommerceOsorioManha\EcommerceOsorioManha\ob
 C:\Users\Aluno\Source\Repos\Asp.Net\EcommerceOsorioManha\EcommerceOsorioManha\obj\Debug\EcommerceOsorioManha.Migrations.Adicionando_Table_ItensVenda.resources
 C:\Users\tc823864\Source\Repos\Asp.Net\EcommerceOsorioManha\EcommerceOsorioManha\obj\Debug\EcommerceOsorioManha.Migrations.Adicionando_Table_ItensVenda.resources
 C:\Users\tc823864\Source\Repos\Asp.Net\EcommerceOsorioManha\EcommerceOsorioManha\obj\Debug\EcommerceOsorioManha.Migrations.AtualizandoBanco.resources
+C:\Users\tc823864\Source\Repos\Asp.Net\EcommerceOsorioManha\EcommerceOsorioManha\obj\Debug\EcommerceOsorioManha.Migrations.AdicionandoModelUsuario.resources

@@ -1,0 +1,59 @@
+﻿@model EcommerceOsorioManha.Models.Usuario
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+
+}
+
+<div>
+    @using (Html.BeginForm("Logar", "Usuario",
+                FormMethod.Post,
+                new
+                {
+                    @class = "form-horizontal",
+                    enctype = "multipart/form-data"
+                }))
+    {
+        <fieldset>
+            <legend>Conecte-se </legend>
+            @Html.ValidationSummary(true, null,
+                new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Login,
+                    new { @class = "control-label col-sm-2" })
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.Login,
+                        new
+                        {
+                            @class = "form-control",
+                            @placeholder = "Nome de usuário"
+                        })
+                    @Html.ValidationMessageFor(model => model.Login, null,
+                        new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Senha,
+                    new { @class = "control-label col-sm-3" })
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.Senha,
+                        new
+                        {
+                            @class = "form-control",
+                            @placeholder = "Senha de Usuario"
+                        })
+                    @Html.ValidationMessageFor(model => model.Senha, null,
+                        new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <input type="submit" value="Login"
+                           class="btn btn-primary">
+                </div>
+            </div>
+        </fieldset>
+    }
+
+</div>
