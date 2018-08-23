@@ -14,6 +14,7 @@
         <th>Produto</th>
         <th>Quantidade</th>
         <th>Preço</th>
+        <th>Opções</th>
         <th>SubTotal</th>
     </tr>
     @{double total = 0;
@@ -24,12 +25,16 @@
         <tr>
             <td><img src="~/Imagens/@item.ProdutoVenda.Imagem" alt="Imagem do Produto" style="width:150px" /></td>
             <td>@item.ProdutoVenda.Nome</td>
-            <td>@item.QtdVenda</td>
-            <td>@item.PrecoVenda</td>
+            <td>@item.QtdVenda Unid(s)</td>
+            <td>@item.PrecoVenda.ToString("C2")</td>
             @{
                 double subtotal = item.QtdVenda * item.PrecoVenda;
                 total = total + subtotal;
             }
+            <td>
+                @Html.ActionLink("Detalhes", "Detalhes", "Exibir", new { id = item.ProdutoVenda.ProdutoId }, null)<br />
+                @Html.ActionLink("Remover", "RemoverItem", "Exibir", new { id = item.VendaId }, null)
+            </td>
             <td>@subtotal.ToString("C2")</td>
         </tr>
     }

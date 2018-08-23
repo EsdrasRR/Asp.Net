@@ -17,7 +17,11 @@ namespace EcommerceOsorioManha.Controllers
         public ActionResult Home(int? id)
         {
             ViewBag.Categorias = CategoriaDAO.RetornarCategorias();
-          
+            if (id == null)
+            {
+                return View(ProdutoDAO.RetornarProdutos());
+            }
+
             return View(ProdutoDAO.BuscarProdutosPorCategoria(id));
         }
 
@@ -48,6 +52,11 @@ namespace EcommerceOsorioManha.Controllers
         public ActionResult CarrinhoCompras()
         {
             return View(ItemVendaDAO.BuscarItensVendaPorCarrinhoId());
+        }
+        public ActionResult RemoverItem(int id)
+        {
+            ItemVendaDAO.RemoverItem(id);
+            return RedirectToAction("Home");
         }
     }
 }

@@ -21,5 +21,15 @@ namespace EcommerceOsorioManha.DAL
             ctx.ItensVenda.Add(venda);
             ctx.SaveChanges();
         }
+        public static void RemoverItem(int id)
+        {
+            ctx.ItensVenda.Remove(BuscaItemPorId(id));
+            ctx.SaveChanges();
+        }
+
+        private static ItemVenda BuscaItemPorId(int id)
+        {
+            return ctx.ItensVenda.Find(id);
+        }
     }
 }

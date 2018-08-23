@@ -151,6 +151,10 @@
     <Compile Include="Migrations\201808211130013_Adicionando_Table_ItensVenda.Designer.cs">
       <DependentUpon>201808211130013_Adicionando_Table_ItensVenda.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808231133345_AtualizandoBanco.cs" />
+    <Compile Include="Migrations\201808231133345_AtualizandoBanco.Designer.cs">
+      <DependentUpon>201808231133345_AtualizandoBanco.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\Context.cs" />
@@ -186,7 +190,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Home\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201808141751039_Configurando.resx">
@@ -194,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808211130013_Adicionando_Table_ItensVenda.resx">
       <DependentUpon>201808211130013_Adicionando_Table_ItensVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808231133345_AtualizandoBanco.resx">
+      <DependentUpon>201808231133345_AtualizandoBanco.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
