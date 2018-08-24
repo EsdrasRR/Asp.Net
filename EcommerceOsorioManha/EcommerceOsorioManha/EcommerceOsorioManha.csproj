@@ -191,13 +191,12 @@
     <Content Include="Views\Categoria\CadastrarCategoria.cshtml" />
     <Content Include="Views\Categoria\AlterarCategoria.cshtml" />
     <Content Include="Views\Categoria\RemoverCategoria.cshtml" />
-    <Content Include="Views\Exibir\Home.cshtml" />
     <Content Include="Views\Exibir\Detalhes.cshtml" />
     <Content Include="Views\Exibir\CarrinhoCompras.cshtml" />
     <Content Include="Views\Usuario\Login.cshtml" />
-    <Content Include="Views\Usuario\Home.cshtml" />
     <Content Include="Views\Usuario\CadastrarUsuario.cshtml" />
     <Content Include="Views\Usuario\Erro.cshtml" />
+    <Content Include="Views\Exibir\Home.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -22,16 +22,6 @@ namespace EcommerceOsorioManha.Controllers
         {
             return View();
         }
-        public ActionResult Home(int? id)
-        {
-            ViewBag.Categorias = CategoriaDAO.RetornarCategorias();
-            if (id == null)
-            {
-                return View(ProdutoDAO.RetornarProdutos());
-            }
-
-            return View(ProdutoDAO.BuscarProdutosPorCategoria(id));
-        }
 
         [HttpPost]
         public ActionResult Logar(Usuario u)
@@ -41,7 +31,7 @@ namespace EcommerceOsorioManha.Controllers
             if (user != null)
             {
                 Session["Usuario"] = user;
-                return RedirectToAction("Home","Usuario");
+                return RedirectToAction("Home","Exibir");
             }
             else
             {
