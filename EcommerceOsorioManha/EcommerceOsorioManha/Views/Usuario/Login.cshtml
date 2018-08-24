@@ -40,7 +40,8 @@
                         new
                         {
                             @class = "form-control",
-                            @placeholder = "Senha de Usuario"
+                            @placeholder = "Senha de Usuario", 
+                            @type="password"
                         })
                     @Html.ValidationMessageFor(model => model.Senha, null,
                         new { @class = "text-danger" })
@@ -51,8 +52,10 @@
                 <div class="col-sm-offset-2 col-sm-10">
                     <input type="submit" value="Login"
                            class="btn btn-primary">
+                    @Html.ActionLink("Cadastrar", "CadastrarUsuario", "Usuario", new { @class = "btn btn-success" })
                 </div>
             </div>
+            
         </fieldset>
     }
 

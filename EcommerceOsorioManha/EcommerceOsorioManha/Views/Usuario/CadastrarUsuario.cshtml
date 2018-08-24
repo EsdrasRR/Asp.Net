@@ -1,0 +1,43 @@
+﻿@model EcommerceOsorioManha.Models.Usuario
+
+@{
+    ViewBag.Title = "CadastrarUsuario";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<div>
+    @using (Html.BeginForm("CadastrarUsu", "Usuario", FormMethod.Post, new { @class = "form-horizontal" }))
+    {
+        <fielset>
+            <legend>Cadastrar Usuário</legend>
+            @Html.ValidationSummary(true, null, new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Login, new { @class = "control-label col-sm-2" })
+                <div class="col-sm-6">
+                    @Html.TextBoxFor(model => model.Login,
+                    new { @class = "form-control", @placeholder = "Login" })
+
+                    @Html.ValidationMessageFor(model => model.Login, null,
+                    new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Senha, new { @class = "control-label col-sm-2" })
+                <div class="col-sm-6">
+                    @Html.TextBoxFor(model => model.Senha,
+                    new { @class = "form-control", @placeholder = "Senha", @type = "password" })
+
+                    @Html.ValidationMessageFor(model => model.Senha, null,
+                    new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <input type="submit" value="Cadastrar" class="btn btn-primary" />
+                </div>
+            </div>
+
+        </fielset>
+    }
+
+</div>

@@ -2,6 +2,11 @@
 
 @{
     ViewBag.Title = "Detalhes";
+
+    if (Session["Usuario"] == null)
+    {
+        Response.Redirect(new Uri(Request.Url, Url.Action("Login", "Usuario")).ToString());
+    }
 }
 
 

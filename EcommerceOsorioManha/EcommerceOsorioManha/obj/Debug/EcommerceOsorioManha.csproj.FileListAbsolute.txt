@@ -211,3 +211,6 @@ C:\Users\Aluno\Source\Repos\Asp.Net\EcommerceOsorioManha\EcommerceOsorioManha\ob
 C:\Users\tc823864\Source\Repos\Asp.Net\EcommerceOsorioManha\EcommerceOsorioManha\obj\Debug\EcommerceOsorioManha.Migrations.Adicionando_Table_ItensVenda.resources
 C:\Users\tc823864\Source\Repos\Asp.Net\EcommerceOsorioManha\EcommerceOsorioManha\obj\Debug\EcommerceOsorioManha.Migrations.AtualizandoBanco.resources
 C:\Users\tc823864\Source\Repos\Asp.Net\EcommerceOsorioManha\EcommerceOsorioManha\obj\Debug\EcommerceOsorioManha.Migrations.AdicionandoModelUsuario.resources
+C:\Users\Aluno\Source\Repos\Asp.Net\EcommerceOsorioManha\EcommerceOsorioManha\obj\Debug\EcommerceOsorioManha.Migrations.AtualizandoBanco.resources
+C:\Users\Aluno\Source\Repos\Asp.Net\EcommerceOsorioManha\EcommerceOsorioManha\obj\Debug\EcommerceOsorioManha.Migrations.AdicionandoModelUsuario.resources
+C:\Users\Aluno\Source\Repos\Asp.Net\EcommerceOsorioManha\EcommerceOsorioManha\obj\Debug\EcommerceOsorioManha.Migrations.Criando_DB_no_PC.resources

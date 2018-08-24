@@ -10,7 +10,26 @@ namespace EcommerceOsorioManha.Controllers
 {
     public class UsuarioController : Controller
     {
-        // GET: Usuario
+        public ActionResult Login()
+        {
+            return View();
+        }
+        public ActionResult CadastrarUsuario()
+        {
+            return View();
+        }
+        public ActionResult Home(int? id)
+        {
+            ViewBag.Categorias = CategoriaDAO.RetornarCategorias();
+            if (id == null)
+            {
+                return View(ProdutoDAO.RetornarProdutos());
+            }
+
+            return View(ProdutoDAO.BuscarProdutosPorCategoria(id));
+        }
+
+        [HttpPost]
         public ActionResult Logar(Usuario u)
         {
             var user = UsuarioDAO.Logar(u);
@@ -18,7 +37,7 @@ namespace EcommerceOsorioManha.Controllers
             if (user != null)
             {
                 Session["Usuario"] = user;
-                return View();
+                return RedirectToAction("Home","Usuario");
             }
             else
             {
@@ -26,10 +45,24 @@ namespace EcommerceOsorioManha.Controllers
             }
 
         }
-        // GET: Usuario
-        public ActionResult Login()
-        { 
-            return View();
+        public ActionResult CadastrarUsu(Usuario u)
+        {
+            if (ModelState.IsValid)
+            {
+                if (UsuarioDAO.CadastrarUsu(u))
+                {
+                    return RedirectToAction("Logar", "Usuario");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Já há um usuário com esse Login");
+                    return View("Home");
+                }
+            }
+            else
+            {
+                return View("Home");
+            }
         }
     }
 }

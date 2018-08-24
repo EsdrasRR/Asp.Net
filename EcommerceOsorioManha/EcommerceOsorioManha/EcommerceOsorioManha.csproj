@@ -126,6 +126,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap.min%281%29.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Imagens\semimagem.jpg" />
@@ -161,6 +162,10 @@
     <Compile Include="Migrations\201808231519058_AdicionandoModelUsuario.Designer.cs">
       <DependentUpon>201808231519058_AdicionandoModelUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808241128444_Criando_DB_no_PC.cs" />
+    <Compile Include="Migrations\201808241128444_Criando_DB_no_PC.Designer.cs">
+      <DependentUpon>201808241128444_Criando_DB_no_PC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\Context.cs" />
@@ -189,6 +194,8 @@
     <Content Include="Views\Exibir\Detalhes.cshtml" />
     <Content Include="Views\Exibir\CarrinhoCompras.cshtml" />
     <Content Include="Views\Usuario\Login.cshtml" />
+    <Content Include="Views\Usuario\Home.cshtml" />
+    <Content Include="Views\Usuario\CadastrarUsuario.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -211,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808231519058_AdicionandoModelUsuario.resx">
       <DependentUpon>201808231519058_AdicionandoModelUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808241128444_Criando_DB_no_PC.resx">
+      <DependentUpon>201808241128444_Criando_DB_no_PC.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

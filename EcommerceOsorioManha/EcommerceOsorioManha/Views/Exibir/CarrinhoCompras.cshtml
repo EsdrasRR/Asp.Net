@@ -4,6 +4,11 @@
     ViewBag.Title = "CarrinhoCompras";
     Layout = "~/Views/Shared/Layout.cshtml";
     string guid = ViewBag.Guid;
+
+    if (Session["Usuario"] == null)
+    {
+        Response.Redirect(new Uri(Request.Url, Url.Action("Login", "Usuario")).ToString());
+    }
 }
 
 <h2>Carrinho de Compras</h2>
@@ -14,8 +19,8 @@
         <th>Produto</th>
         <th>Quantidade</th>
         <th>Preço</th>
-        <th>Opções</th>
         <th>SubTotal</th>
+        <th>Opções</th>
     </tr>
     @{double total = 0;
     }
@@ -30,14 +35,26 @@
             @{
                 double subtotal = item.QtdVenda * item.PrecoVenda;
                 total = total + subtotal;
+
+
             }
+
             <td>
-                @Html.ActionLink("Detalhes", "Detalhes", "Exibir", new { id = item.ProdutoVenda.ProdutoId }, null)<br />
-                @Html.ActionLink("Remover", "RemoverItem", "Exibir", new { id = item.VendaId }, null)
+                @subtotal.ToString("C2")
             </td>
-            <td>@subtotal.ToString("C2")</td>
+
+            <td>
+                <div style="margin:5px">
+                    @Html.ActionLink("Detalhes", "Detalhes", "Exibir", new { id = item.ProdutoVenda.ProdutoId }, new { @class = "btn btn-info" })
+                </div>
+
+                <div style="margin:5px">
+                    @Html.ActionLink("Remover", "RemoverItem", "Exibir", new { id = item.VendaId }, new { @class = "btn btn-danger" })
+                </div>
+            </td>
+
         </tr>
-    }
+                }
 
 </table>
 <br />

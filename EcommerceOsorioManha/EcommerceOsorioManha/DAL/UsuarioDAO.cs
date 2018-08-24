@@ -23,6 +23,19 @@ namespace EcommerceOsorioManha.DAL
                 return usuarioLogado;
             }
         }
-
+        public static bool CadastrarUsu(Usuario u)
+        {
+            if (BuscarUsuarioPorLogin(u) == null)
+            {
+                ctx.Usuarios.Add(u);
+                ctx.SaveChanges();
+                return true;
+            }
+            return false;
+        }
+        public static Usuario BuscarUsuarioPorLogin(Usuario u)
+        {
+            return ctx.Usuarios.FirstOrDefault(x => x.Login.Equals(u.Login));
+        }
     }
 }
