@@ -18,7 +18,21 @@ namespace EcommerceOsorioManha.DAL
         }
         public static void CadastrarVenda(ItemVenda venda)
         {
-            ctx.ItensVenda.Add(venda);
+            string carrinhoId = Sessao.RetornarCarrinhoId();
+
+            ItemVenda item = ctx.ItensVenda.
+                Include("ProdutoVenda").FirstOrDefault(
+                x => x.ProdutoVenda.ProdutoId == venda.ProdutoVenda.ProdutoId &&
+                x.CarrinhoId.Equals(carrinhoId));
+
+            if (item == null)
+            {
+                ctx.ItensVenda.Add(venda);
+            }
+            else
+            {
+                item.QtdVenda++;
+            }
             ctx.SaveChanges();
         }
         public static void RemoverItem(int id)
@@ -30,6 +44,30 @@ namespace EcommerceOsorioManha.DAL
         private static ItemVenda BuscaItemPorId(int id)
         {
             return ctx.ItensVenda.Find(id);
+        }
+
+        public static double RetornarTotalCarrinho()
+        {
+            return BuscarItensVendaPorCarrinhoId().Sum(x => x.QtdVenda * x.PrecoVenda);
+        }
+        public static double RetornarQuantidadeItensCarrinho()
+        {
+            return BuscarItensVendaPorCarrinhoId().Sum(x => x.QtdVenda);
+        }
+        public static void AdicionarItem(int id)
+        {
+            ItemVenda item = ctx.ItensVenda.Find(id);
+            item.QtdVenda++;
+            ctx.SaveChanges();
+        }
+        public static void DiminuirItem(int id)
+        {
+            ItemVenda item = ctx.ItensVenda.Find(id);
+            if (item.QtdVenda > 1)
+            {
+                item.QtdVenda--;
+                ctx.SaveChanges();
+            }
         }
     }
 }

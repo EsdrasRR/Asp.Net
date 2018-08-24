@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "Erro";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<div class="alert alert-dismissible alert-danger">
+    <h4>
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Login ou Senhas inválidos!</strong><br /><br /> @Html.ActionLink("Clique aqui", "CadastrarUsuario", "Usuario", new { @class = "alert-link" }) para cadastrar um novo usuário ou <Strong>@Html.ActionLink("tente novamente", "Login", "Usuario", new { @class = "alert-link" })</Strong>.
+    </h4>
+</div>
+

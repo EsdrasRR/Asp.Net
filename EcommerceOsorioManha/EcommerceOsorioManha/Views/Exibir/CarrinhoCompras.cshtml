@@ -30,7 +30,11 @@
         <tr>
             <td><img src="~/Imagens/@item.ProdutoVenda.Imagem" alt="Imagem do Produto" style="width:150px" /></td>
             <td>@item.ProdutoVenda.Nome</td>
-            <td>@item.QtdVenda Unid(s)</td>
+            <td>
+                @Html.ActionLink("-", "DiminuirItem", "Exibir", new { id = item.VendaId }, new { @class = "btn btn-danger" })
+                @item.QtdVenda Unid(s)
+                @Html.ActionLink("+", "AdicionarItem", "Exibir", new { id = item.VendaId }, new { @class = "btn btn-success" })
+            </td>
             <td>@item.PrecoVenda.ToString("C2")</td>
             @{
                 double subtotal = item.QtdVenda * item.PrecoVenda;

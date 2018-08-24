@@ -56,7 +56,18 @@ namespace EcommerceOsorioManha.Controllers
         public ActionResult RemoverItem(int id)
         {
             ItemVendaDAO.RemoverItem(id);
-            return RedirectToAction("Home");
+            return RedirectToAction("Home", "Usuario");
+        }
+        public ActionResult AdicionarItem(int id)
+        {
+            ItemVendaDAO.AdicionarItem(id);
+            return RedirectToAction("CarrinhoCompras", "Exibir");
+        }
+
+        public ActionResult DiminuirItem(int id)
+        {
+            ItemVendaDAO.DiminuirItem(id);
+            return RedirectToAction("CarrinhoCompras", "Exibir");
         }
     }
 }

@@ -18,6 +18,10 @@ namespace EcommerceOsorioManha.Controllers
         {
             return View();
         }
+        public ActionResult Erro()
+        {
+            return View();
+        }
         public ActionResult Home(int? id)
         {
             ViewBag.Categorias = CategoriaDAO.RetornarCategorias();
@@ -41,7 +45,7 @@ namespace EcommerceOsorioManha.Controllers
             }
             else
             {
-                return HttpNotFound();
+                return RedirectToAction("Erro", "Usuario");
             }
 
         }

@@ -126,8 +126,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap.min%281%29.css" />
+    <Content Include="Content\bootstrap.min_1.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.min_2.css" />
     <Content Include="Global.asax" />
     <Content Include="Imagens\semimagem.jpg" />
     <Content Include="Web.config" />
@@ -196,6 +197,7 @@
     <Content Include="Views\Usuario\Login.cshtml" />
     <Content Include="Views\Usuario\Home.cshtml" />
     <Content Include="Views\Usuario\CadastrarUsuario.cshtml" />
+    <Content Include="Views\Usuario\Erro.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

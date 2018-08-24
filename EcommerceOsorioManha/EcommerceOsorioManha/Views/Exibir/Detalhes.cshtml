@@ -11,13 +11,28 @@
 
 
 <table style="margin-left: 30px">
-        <div><h4>@Model.Nome</h4></div>
-
+    <tr>
+        <td colspan="2">
+            <h4>@Model.Nome</h4>
+        </td>
+    </tr>
+    <tr>
+        <td style="width:400px">
             <img src="~/Imagens/@Model.Imagem" alt="Imagem do produto" style="width:150px" , height:150px" />
+        </td>
+        <td style="vertical-align: top; padding-left: 30px">
+            <b>Descrição: </b>
             <br />
             @Model.Descricao<br />
-            <div> Preço: R$ @Model.Preco </div>
-            <b>Categoria: </b>@Model.Categoria.Nome
-            <br />
+            <b>Preço: </b>@Model.Preco.ToString("C2")<br />
+            <b>Categoria: </b>@Model.Categoria.Nome<br />
+            <div style="margin:5px">
+                @Html.ActionLink("Adicionar", "AdicionarAoCarrinho",
+                "Exibir", new { id = Model.ProdutoId },
+                new { @class = "btn btn-success" })
+            </div>
+            
+        </td>
+    </tr>
 </table>
 
